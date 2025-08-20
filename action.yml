@@ -15,8 +15,8 @@ runs:
       #   repository: "${{ inputs.target-repo }}"
     - name: Write to readme
       shell: bash
-      run: echo "BBBBBBBBBBBBB" >> README.md
+      run: echo "CCCCCCCCCC" >> README.md
     - name: Save updates
       uses: stefanzweifel/git-auto-commit-action@v6
       with:
-        commit_message: Add BBBBBBBBBBBBB to README
+        commit_message: Add CCCCCCCCCC to README
