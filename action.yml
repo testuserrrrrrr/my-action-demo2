@@ -9,13 +9,11 @@ runs:
         go-version: '1.24'
     - name: Checkout
       uses: actions/checkout@v4
-    # - name: Write to readme
-    #   shell: bash
-    #   run: echo "CCCCCCCCCC" >> README.md
     - name: Run README generator
       shell: bash
       run: |
-        go run $GITHUB_ACTION_PATH/main.go
+        export ORIGIN_REPO="$PWD"
+        (cd $GITHUB_ACTION_PATH && go run ./main.go -- $ORIGIN_REPO README.md)
     - name: Save updates
       uses: stefanzweifel/git-auto-commit-action@v6
       with:
