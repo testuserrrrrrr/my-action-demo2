@@ -16,6 +16,9 @@ env:
 runs:
   using: "composite"
   steps:
+    - name: Debug
+      shell: bash
+      run: echo "GITHUB_TOKEN=$GITHUB_TOKEN"
     - name: Debug1
       shell: bash
       run: |
