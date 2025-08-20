@@ -15,7 +15,7 @@ runs:
     - name: Run README generator
       shell: bash
       run: |
-        go run ./main.go
+        go run $GITHUB_ACTION_PATH/main.go
     - name: Save updates
       uses: stefanzweifel/git-auto-commit-action@v6
       with:
