@@ -1,9 +1,28 @@
 name: my-composite
+
+inputs:
+  # Pass ${{ github.repository }} here
+  target-repo:
+    description:  
+    required: true
+
 runs:
   using: "composite"
   steps:
+    - name: Debug1
+      shell: bash
+      run: |
+        pwd
+        ls -la
     - name: Checkout
       uses: actions/checkout@v4
+      with:
+        repository: " ${{ inputs.target-repo }} "
+    - name: Debug2
+      shell: bash
+      run: |
+        pwd
+        ls -la
     - name: Write to readme
       shell: bash
       run: echo "AAAAAAA" >> README.md
