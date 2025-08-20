@@ -13,10 +13,11 @@ import (
 func main() {
 	filename := flag.String("file", "./README.md", "target file")
 	owner := flag.String("owner", "John Doe", "user")
+	ignore := flag.String("ignore", "", "ignored repos")
 	flag.Parse()
-	fmt.Printf("=========== %s ===========", *filename)
+
 	now := time.Now().String()
-	if err := os.WriteFile(*filename, []byte(*owner+"  \n"+now+"\n"), 0644); err != nil {
+	if err := os.WriteFile(*filename, []byte(*owner+"  \n"+*ignore+"  \n"+now+"\n"), 0644); err != nil {
 		log.Fatal(err)
 	}
 }
