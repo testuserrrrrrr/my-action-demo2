@@ -5,6 +5,13 @@ inputs:
   target-repo:
     description: "AAAAAAAAAAAA"
     required: true
+  # Pass ${{ secrets.GITHUB_TOKEN }} here
+  token:
+    description: "AAAAAAAAAA"
+    required: true
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 runs:
   using: "composite"
