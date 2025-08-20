@@ -5,6 +5,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
     - name: Write to readme
+      shell: bash
       run: echo "AAAAAAA" >> README.md
     - name: Save updates
       uses: stefanzweifel/git-auto-commit-action@v4
