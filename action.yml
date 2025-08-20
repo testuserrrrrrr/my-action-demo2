@@ -3,7 +3,7 @@ name: my-composite
 inputs:
   # Pass ${{ github.repository }} here
   target-repo:
-    description:  
+    description: "AAAAAAAAAAAA"
     required: true
 
 runs:
@@ -17,7 +17,7 @@ runs:
     - name: Checkout
       uses: actions/checkout@v4
       with:
-        repository: " ${{ inputs.target-repo }} "
+        repository: "${{ inputs.target-repo }}"
     - name: Debug2
       shell: bash
       run: |
