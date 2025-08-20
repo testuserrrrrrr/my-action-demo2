@@ -1,0 +1,12 @@
+name: my-composite
+runs:
+  using: "composite"
+  steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+    - name: Write to readme
+      run: echo "AAAAAAA" >> README.md
+    - name: Save updates
+      uses: stefanzweifel/git-auto-commit-action@v4
+      with:
+        commit_message: Add AAAAAA to README
