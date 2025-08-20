@@ -13,7 +13,7 @@ runs:
       shell: bash
       run: |
         export ORIGIN_REPO="$PWD"
-        (cd $GITHUB_ACTION_PATH && go run ./main.go -- $ORIGIN_REPO README.md)
+        (cd $GITHUB_ACTION_PATH && go run ./main.go -- $ORIGIN_REPO/README.md)
     - name: Save updates
       uses: stefanzweifel/git-auto-commit-action@v6
       with:
