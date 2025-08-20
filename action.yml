@@ -10,9 +10,6 @@ inputs:
     description: "AAAAAAAAAA"
     required: true
 
-env:
-  GITHUB_TOKEN: ${{ inputs.token }}
-
 runs:
   using: "composite"
   steps:
@@ -37,6 +34,8 @@ runs:
       shell: bash
       run: echo "AAAAAAA" >> README.md
     - name: Save updates
+      env:
+        GITHUB_TOKEN: "${{ inputs.token }}"
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
         commit_message: Add AAAAAA to README
