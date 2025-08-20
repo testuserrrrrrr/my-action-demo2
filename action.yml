@@ -5,34 +5,18 @@ inputs:
   target-repo:
     description: "AAAAAAAAAAAA"
     required: true
-  # Pass ${{ secrets.GITHUB_TOKEN }} here
-  # token:
-  #   description: "AAAAAAAAAA"
-  #   required: true
 
 runs:
   using: "composite"
   steps:
-    - name: Debug1
-      shell: bash
-      run: |
-        pwd
-        ls -la
     - name: Checkout
       uses: actions/checkout@v4
       with:
         repository: "${{ inputs.target-repo }}"
-    - name: Debug2
-      shell: bash
-      run: |
-        pwd
-        ls -la
     - name: Write to readme
       shell: bash
-      run: echo "AAAAAAA" >> README.md
-    # - name: Save updates
-    #   env:
-    #     GITHUB_TOKEN: "${{ inputs.token }}"
-    #   uses: stefanzweifel/git-auto-commit-action@v4
-    #   with:
-    #     commit_message: Add AAAAAA to README
+      run: echo "BBBBBBBBBBBBB" >> README.md
+    - name: Save updates
+      uses: stefanzweifel/git-auto-commit-action@v6
+      with:
+        commit_message: Add BBBBBBBBBBBBB to README
