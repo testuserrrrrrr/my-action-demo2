@@ -5,7 +5,7 @@ import (
 	"os"
 	"time"
 	"flag"
-	"fmt"
+	// "fmt"
 )
 
 //const filename = "README.md"
